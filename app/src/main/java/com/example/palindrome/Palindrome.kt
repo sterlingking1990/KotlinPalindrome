@@ -1,17 +1,18 @@
 package com.example.palindrome
 
 fun main(args:Array<String>){
-
+    print(checkPalindrome("I did, did I?"))
 
 }
 
 fun checkPalindrome(wordString:String): Boolean {
     //keep only letter or digit in the string and take out all symbols
-    val wordStrFiltered=wordString.filter { it.isLetterOrDigit() }
+
+    val wordStrFiltered=wordString.toLowerCase().filter { it.isLetterOrDigit() }
     var counter=0
     for (i in wordStrFiltered.length-1 downTo wordStrFiltered.length/2){
-        var frontCount=(wordString.length-1)-i
-        if (wordStrFiltered[frontCount]==wordString[i]){
+        var frontCount=(wordStrFiltered.length-1)-i
+        if (wordStrFiltered[frontCount]==wordStrFiltered[i]){
             counter+=1
         }
         else{
@@ -19,10 +20,10 @@ fun checkPalindrome(wordString:String): Boolean {
         }
     }
 
-    return if(wordString.length%2==0) {
-        counter==wordString.length/2
+    return if(wordStrFiltered.length%2==0) {
+        counter==wordStrFiltered.length/2
 
     } else{
-        counter-1==wordString.length/2
+        counter-1==wordStrFiltered.length/2
     }
 }
