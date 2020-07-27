@@ -5,7 +5,7 @@ fun main(args:Array<String>){
 
 }
 
-fun checkPalindrome(wordString:String){
+fun checkPalindrome(wordString:String): Boolean {
     //keep only letter or digit in the string and take out all symbols
     val wordStrFiltered=wordString.filter { it.isLetterOrDigit() }
     var counter=0
@@ -17,5 +17,12 @@ fun checkPalindrome(wordString:String){
         else{
             counter=0
         }
+    }
+
+    return if(wordString.length%2==0) {
+        counter==wordString.length/2
+
+    } else{
+        counter-1==wordString.length/2
     }
 }
