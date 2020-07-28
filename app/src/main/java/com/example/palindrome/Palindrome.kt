@@ -1,7 +1,7 @@
 package com.example.palindrome
 
 fun main(args:Array<String>){
-    print(checkPalindrome("I did, did I?"))
+    print(checkPalindrome("Was it a cat I saw?"))
 
 }
 
