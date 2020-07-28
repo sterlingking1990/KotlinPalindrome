@@ -65,5 +65,15 @@ class ExampleUnitTest {
         assertEquals(checkPalindrome("*#555*606*555#"),true)
     }
 
+    @Test
+    fun emptyStringPalindrome(){
+        assertEquals(checkPalindrome(""),true)
+    }
+
+    @Test
+    fun singleCharacterIsPalindrome(){
+        assertEquals(checkPalindrome("a"),true)
+    }
+
 
 }
